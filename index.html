@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrackCleaner — radio-clean edits for Mac</title>
+<meta name="description" content="TrackCleaner makes radio-clean versions of songs on your Mac: it ducks only the vocal over each curse word while the music keeps playing.">
+<style>
+  /* Studio graphite — the app's own palette, so the page and the product match. */
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181b;
+    --surface-2: #1c1f23;
+    --line: #2a2e34;
+    --text: #e6e8ea;
+    --muted: #9aa1a9;
+    --accent: #6683a6;
+    --accent-hi: #7d9bc0;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 72px 24px 96px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 40px; margin-bottom: 40px; }
+  .mark { display: inline-flex; align-items: flex-end; gap: 3px; height: 34px; margin-bottom: 22px; }
+  .mark i { display: block; width: 5px; border-radius: 2px; background: var(--accent); }
+  .mark i.ducked { background: #c9922f; }
+  h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; max-width: 56ch; }
+  h2 { font-size: 1.05rem; letter-spacing: 0.02em; text-transform: uppercase;
+       color: var(--muted); margin: 44px 0 14px; font-weight: 600; }
+  p { margin: 0 0 16px; }
+  a { color: var(--accent-hi); }
+  strong { color: #fff; font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #0b0d0f;
+    font-weight: 650; font-size: 1rem; text-decoration: none;
+    padding: 13px 22px; border-radius: var(--radius); border: 0;
+  }
+  .btn:hover { background: var(--accent-hi); }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 20px 22px; margin: 0 0 16px;
+  }
+  .card.key { border-left: 3px solid #c9922f; }
+  .card h3 { margin: 0 0 8px; font-size: 1rem; }
+  ol, ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  .req { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px;
+         font-size: 0.95rem; color: var(--muted); }
+  .req dt { color: var(--text); }
+  dl { margin: 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 24px;
+           color: var(--muted); font-size: 0.9rem; }
+  code { background: var(--surface-2); border: 1px solid var(--line);
+         border-radius: 5px; padding: 1px 6px; font-size: 0.9em; }
+  @media (max-width: 560px) {
+    .wrap { padding: 48px 18px 72px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <!-- The product story in one glyph: the vocal dips, the music plays on. -->
+    <div class="mark" aria-hidden="true">
+      <i style="height:40%"></i><i style="height:66%"></i><i style="height:100%"></i>
+      <i style="height:78%"></i><i class="ducked" style="height:18%"></i>
+      <i class="ducked" style="height:14%"></i><i style="height:82%"></i>
+      <i style="height:54%"></i><i style="height:88%"></i><i style="height:34%"></i>
+    </div>
+    <h1>TrackCleaner</h1>
+    <p class="tagline">
+      Radio-clean edits, on your Mac. It ducks <em>only the vocal</em> over each curse
+      word while the music keeps playing — then hands you a waveform and a transcript so
+      you can check every censor by ear.
+    </p>
+    <div class="cta">
+      <a class="btn" id="download" href="https://github.com/elDoof/trackcleaner-releases/releases/latest">
+        Download for Apple Silicon
+      </a>
+      <span class="meta" id="relmeta">
+        <a href="https://github.com/elDoof/trackcleaner-releases/releases">All releases</a>
+      </span>
+    </div>
+  </header>
+
+  <div class="card key">
+    <h3>You need an activation key</h3>
+    <p style="margin:0">
+      TrackCleaner is licensed software and stays locked until a key is entered. Keys are
+      issued to individual people at BPM Supreme — <strong>ask your team lead</strong> if
+      you have not been sent one.
+    </p>
+  </div>
+
+  <h2>Installing</h2>
+  <ol>
+    <li>Download the <code>.dmg</code> above.</li>
+    <li>Open it and drag <strong>TrackCleaner</strong> to your Applications folder.</li>
+    <li>Launch it and paste in your activation key.</li>
+  </ol>
+  <p>
+    It opens like any other Mac app — the build is signed and notarized by Apple. If macOS
+    warns you about it, the download is incomplete; get a fresh copy rather than working
+    around the warning.
+  </p>
+  <p>
+    The first launch needs an internet connection and a few minutes while it downloads the
+    audio models it uses, with progress shown. After that it works offline.
+  </p>
+
+  <h2>Requirements</h2>
+  <dl class="req">
+    <dt>Mac</dt><dd>Apple Silicon (M1 or newer). Intel Macs are not supported.</dd>
+    <dt>macOS</dt><dd>12 Monterey or later.</dd>
+    <dt>Disk</dt><dd>About 5 GB free for the audio models.</dd>
+  </dl>
+
+  <h2>How it works</h2>
+  <p>
+    TrackCleaner separates the vocal from the instrumental, lines the words up to the audio,
+    and finds the profanity. Where it finds a word it lowers the vocal for exactly that
+    moment, so the beat and the music carry straight through — a real radio edit rather than
+    a bleep or a gap.
+  </p>
+  <p>
+    It listens to a song more than once, and it tells you where it is unsure instead of
+    quietly guessing: near-misses, unclear moments and stretches where nothing was heard all
+    end up in a short "worth a listen" checklist you can play through. Nothing is exported
+    that you have not reviewed.
+  </p>
+  <p>Songs never leave your Mac. All processing is local.</p>
+
+  <h2>Using it</h2>
+  <p>
+    <a href="USER-GUIDE.md">Read the user guide</a> — adding songs, reviewing on the
+    waveform and transcript, keyboard shortcuts, and exporting.
+  </p>
+
+  <footer>
+    TrackCleaner is an internal tool built for BPM Supreme, where clean edits are a product.
+    © 2026 BPM Supreme. All rights reserved.
+  </footer>
+
+</div>
+
+<script>
+// Progressive enhancement: point the button straight at the latest .dmg and show its
+// version and size. The button already links to the releases page, so if this request is
+// rate-limited, blocked or offline, the page still works exactly as served.
+(function () {
+  var REPO = 'elDoof/trackcleaner-releases';
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', {
+    headers: { Accept: 'application/vnd.github+json' }
+  })
+    .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .then(function (rel) {
+      var dmg = (rel.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name); })[0];
+      if (!dmg) return;
+      document.getElementById('download').href = dmg.browser_download_url;
+      var version = String(rel.tag_name || '').replace(/^v/, '');
+      var mb = Math.round(dmg.size / 1048576);
+      var when = rel.published_at
+        ? new Date(rel.published_at).toLocaleDateString(undefined,
+            { year: 'numeric', month: 'short', day: 'numeric' })
+        : '';
+      document.getElementById('relmeta').innerHTML =
+        'Version ' + version + ' &middot; ' + mb + ' MB' + (when ? ' &middot; ' + when : '') +
+        ' &middot; <a href="https://github.com/' + REPO + '/releases">All releases</a>';
+    })
+    .catch(function () { /* keep the static link */ });
+})();
+</script>
+</body>
+</html>
