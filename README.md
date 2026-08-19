@@ -13,7 +13,7 @@ A nicer download page lives at
 ## You need an activation key
 
 TrackCleaner is licensed software and stays locked until a key is entered. Keys are issued
-to individual people at BPM Supreme — **ask your team lead** if you have not been sent one.
+to individual users — **ask whoever sent you the link** if you have not been sent one.
 
 ## Installing
 
@@ -47,4 +47,4 @@ private. Songs you process never leave your Mac; all processing is local.
 
 ---
 
-© 2026 BPM Supreme. All rights reserved.
+© 2026 TrackCleaner. All rights reserved.
